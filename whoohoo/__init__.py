@@ -29,7 +29,12 @@ class WhooHooTranslator:
     def __init__(self, translator_type):
         self.translateType = translator_type.value
 
+    # whoohoo.co.uk only accepts newlines as CRLF
+    def __replace_all_newlines_with_CRLF(self, text):
+        return text.replace('\r', '\r\n').replace('\r\n', '\n').replace('\n', '\r\n')
+
     def translate(self, text: str) -> str:
+        text = self.__replace_all_newlines_with_CRLF(text)
         html = requests.post(
             url="http://www.whoohoo.co.uk/main.asp",
             data={
@@ -46,3 +51,4 @@ class WhooHooTranslator:
     def translate_to_file(self, text: str, file_path: str) -> None:
         translated_text = self.translate(text)
         open(file_path, 'wb').write(translated_text.encode())
+

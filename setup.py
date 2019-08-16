@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='whoohoo.co.uk',
-      version='1.0',
+      version='1.1',
       description='Allows you to translate texts into different dialects via whoohoo.co.uk',
       long_description='Allows you to translate texts into different dialects via whoohoo.co.uk',
       author='sl4v',
