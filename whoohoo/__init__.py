@@ -44,9 +44,13 @@ class WhooHooTranslator:
                 'pageid': self.translateType,
                 'topic': 'translator'
             }
-        ).content.decode()
+        ).text
         soup = bs(html, 'html.parser')
-        return soup.find_all('form', recursive=True)[1].find('b').string
+        translated_text = soup.find_all('form', recursive=True)[1].find('b').string
+        # Sometimes it starts an empty space for some reason
+        if translated_text[0] is ' ':
+            translated_text = translated_text[1:]
+        return translated_text
 
     def translate_to_file(self, text: str, file_path: str) -> None:
         translated_text = self.translate(text)
