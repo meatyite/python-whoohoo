@@ -1,7 +1,7 @@
 # python-whoohoo
 Allows you to translate english texts into different UK dialects via whoohoo.co.uk in python.
 ## Examples
-Fairly self-explaintory:
+The following is Fairly self-explaintory:
 ```
 from whoohoo import *
 
