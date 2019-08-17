@@ -11,7 +11,7 @@ original_text = "did you know that Water boils at 100 degrees Celsius?"
 translated_text = translator.translate(original_text)
 print(translated_text)
 ```
-Retrieves text from pastebin then translates to scottish english and saves into a file. <br/>
+The following retrieves text from pastebin then translates to scottish english and saves into a file. <br/>
 In this example we are going to use the bee movie script:
 ```
 from urllib.request import urlopen
